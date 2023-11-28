@@ -1,10 +1,16 @@
 import React from 'react';
-import {  } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 
 function Test() {
+
+    const [name, setName] = useState("");
+
     return (
         <div>
-            Hello World
+            <TextField value={name} onChange={(e) => setName(e.target.value)} type={'text'} sx={{ margin: 3 }} placeholder='Name' variant='outlined' />
+            <TextField type={'email'} sx={{ margin: 3 }} placeholder='Email' variant='standard' />
+            <TextField type={'password'} sx={{ margin: 3 }} placeholder='Password' variant='filled' />
+            <Typography>{name}</Typography>
         </div>
     )
 }
